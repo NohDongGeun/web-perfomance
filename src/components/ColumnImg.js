@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-function Card(props) {
+const ColumnImg = (props) => {
   const imgRef = useRef(null);
 
   useEffect(() => {
@@ -20,14 +20,7 @@ function Card(props) {
     observer.observe(imgRef.current);
   }, []);
 
-  return (
-    <div className="Card text-center">
-      <img data-src={props.image} ref={imgRef} />
-      <div className="p-5 font-semibold text-gray-700 text-xl md:text-lg lg:text-xl keep-all">
-        {props.children}
-      </div>
-    </div>
-  );
-}
+  return <img data-src={props.src} ref={imgRef} />;
+};
 
-export default Card;
+export default ColumnImg;
